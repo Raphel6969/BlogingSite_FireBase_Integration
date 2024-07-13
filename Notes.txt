@@ -10,7 +10,7 @@ Features:
 - dynamic textarea: expands as the number of line grows
 
 Future Features:
-- alert box before deletion 
+- alert box before deletion (DONE)
 - Update of time as we edited the thing 
 - Add a tag of edited after we have edited it 
 - Color changing modes
