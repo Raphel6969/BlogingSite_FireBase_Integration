@@ -97,7 +97,7 @@ const writeData = (data) => {
         <button class="edit" ><img src="icons/edit.svg" alt="Edit"></button>
         <button class="delete"><img src="icons/delete.svg" alt="Delete"></button>
         </div>
-    <p class="element" ><span class="dataTime">${block.ogtime}</span> 
+    <p class="element" ><span class="dataTime">${block.ogtime}<span class="edited hidden">  (Edited)</span></span> 
         <span contenteditable="false" class="data">${block.data}</span></p>
       </li>`;
     parent.innerHTML += html; //adds the list to the parent ul to show the data
@@ -119,6 +119,7 @@ const editBtn = (e) => {
   const listItem = document.querySelector(`#${ID}`); //gets the particular list item with that ID
   const data = listItem.querySelector(".data"); // the data in that list item
   const save = listItem.querySelector(".save"); // save button
+  const editedSign = listItem.querySelector(".edited") // edited sign beside the time
 
   data.setAttribute("contenteditable", "true"); // lets u edit
   save.classList.remove("hidden"); // shows the save button which was hidden
@@ -135,6 +136,7 @@ const editBtn = (e) => {
       .then(() => {
         alert("Data Updated");
         data.setAttribute("contenteditable", "false"); // again makes it non editable
+        editedSign.classList.remove("hidden") // shows that the peiece of thought is edited
       });
   });
 };
@@ -153,3 +155,5 @@ const deleteBtn = (e) => {
       });
   }
 };
+
+
