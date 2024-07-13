@@ -3,25 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Personal Thoughts</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="main">
-      <span
-        id="inputTxt"
-        class="textarea"
-        role="textbox"
-        contenteditable
-      ></span>
+      <!-- text area part -->
+      <textarea spellcheck="false"></textarea>
+      <!-- Submit button -->
       <button class="subBtn">Submit</button>
     </div>
 
     <div class="text-panel">
-      <ul class="parent">
-        <li></li>
-      </ul>
+      <!-- data from firebase will be added here -->
+      <ul class="parent"></ul>
     </div>
+
+    <!-- SAMPLE DATA  -->
+
+    <!-- <li id="${block.id}">
+      <div class="Btn">
+      <button class="save hidden">Save</button>
+      <button class="edit" ><img src="icons/edit.svg" alt="Edit"></button>
+      <button class="delete"><img src="icons/delete.svg" alt="Delete"></button>
+      </div>
+  <p class="element" ><span class="dataTime">${block.ogtime}</span> 
+      <span contenteditable="false" class="data">${block.data}</span></p>
+    </li> -->
 
     <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore-compat.js"></script>
