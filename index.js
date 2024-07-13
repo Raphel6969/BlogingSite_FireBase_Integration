@@ -141,12 +141,15 @@ const editBtn = (e) => {
 
 //removes the clicked element from the database
 const deleteBtn = (e) => {
-  const ID = e.target.closest("li").id;
-  db.collection("thoughts")
-    .doc(ID)
-    .delete()
-    .then(() => {
-      alert("Data Deleted");
-      location.reload();
-    });
+  const decision = prompt("Do you want to delete this ? (type 'yes')")
+  if(decision == 'yes'){
+    const ID = e.target.closest("li").id;
+    db.collection("thoughts")
+      .doc(ID)
+      .delete()
+      .then(() => {
+        // alert("Data Deleted");
+        location.reload();
+      });
+  }
 };
