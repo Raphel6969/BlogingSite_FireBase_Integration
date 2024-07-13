@@ -1,5 +1,5 @@
 
-# Project Title
+# Personal Blog Site
 
 A blogging Site which updates and stores your data
 
