@@ -1,0 +1,20 @@
+Used the dynamic textarea from 
+https://www.codingnepalweb.com/auto-resize-textarea-html-css-javascript/
+
+Features:
+- Write data
+- Push to dataBase
+- Shows the data in the exact same time
+- lets you edit your data and save in parallel to the data dataBase
+- Lets you delete your data too
+- dynamic textarea: expands as the number of line grows
+
+Future Features:
+- alert box before deletion 
+- Update of time as we edited the thing 
+- Add a tag of edited after we have edited it 
+- Color changing modes
+
+Potential Bugs and Issues
+- readData() on line 70: I want to no be running 24/7 but instead I want to run it less and still show the entire data
+- i want to remove the ogTime variable to make the database less cluttured and instead use the Time property to do it 
