@@ -34,14 +34,14 @@ const onSubmit = () => {
     const time = new Date();
 
     // sets the time format
-    const ogTime = `${time.getDate()}/${time.getMonth()}/${time.getFullYear()} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`;
+    // const ogTime = `${time.getDate()}/${time.getMonth()}/${time.getFullYear()} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`;
 
     //makes connects the firebase and add the time, timeformat, and data
     db.collection("thoughts")
       .add({
         data: data,
-        ogtime: ogTime,
         time: time,
+        edited: false,
       })
       .then((docRef) => {
         console.log("Document written in ID: ", docRef.id);
@@ -91,13 +91,17 @@ const writeData = (data) => {
 
   //maps through each item in the sorted array then pushes the values to the html
   arr.map((block) => {
+    // Converted the firestore timestamp to js time stamp and then used it as the new time more in the devlog section
+    const jsDate = new Date(block.time.seconds * 1000 + block.time.nanoseconds / 1000000)
+    const ogTime = `${jsDate.getDate()}/${jsDate.getMonth()}/${jsDate.getFullYear()} ${jsDate.getHours()}:${jsDate.getMinutes()}:${jsDate.getSeconds()}`;
+
     let html = `<li id="${block.id}">
         <div class="Btn">
         <button class="save hidden">Save</button>
         <button class="edit" ><img src="icons/edit.svg" alt="Edit"></button>
         <button class="delete"><img src="icons/delete.svg" alt="Delete"></button>
         </div>
-    <p class="element" ><span class="dataTime">${block.ogtime}<span class="edited hidden">  (Edited)</span></span> 
+    <p class="element" ><span class="dataTime">${ogTime}<span class="edited ${block.edited ? "" : "hidden"}">  (Edited)</span></span> 
         <span contenteditable="false" class="data">${block.data}</span></p>
       </li>`;
     parent.innerHTML += html; //adds the list to the parent ul to show the data
@@ -132,11 +136,13 @@ const editBtn = (e) => {
       .doc(ID)
       .update({
         data: data.textContent,
+        edited: true,
       })
       .then(() => {
-        alert("Data Updated");
+        location.reload()
         data.setAttribute("contenteditable", "false"); // again makes it non editable
-        editedSign.classList.remove("hidden") // shows that the peiece of thought is edited
+        alert("Data Updated");
+        // editedSign.classList.remove("hidden") // shows that the peiece of thought is edited
       });
   });
 };
