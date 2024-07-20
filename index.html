@@ -3,22 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/128/4341/4341104.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Personal Thoughts</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="main">
-      <!-- text area part -->
-      <textarea spellcheck="false"></textarea>
-      <!-- Submit button -->
-      <button class="subBtn">Submit</button>
+    <div class="container">
+      <div class="main">
+        <!-- text area part -->
+        <textarea spellcheck="false"></textarea>
+        <!-- Submit button -->
+        <button class="subBtn">Submit</button>
+      </div>
+
+      <div class="text-panel">
+        <!-- data from firebase will be added here -->
+        <ul class="parent"></ul>
+      </div>
     </div>
 
-    <div class="text-panel">
-      <!-- data from firebase will be added here -->
-      <ul class="parent"></ul>
-    </div>
-
+    <footer>
+      <div>
+        <a target="_blank" href="https://www.instagram.com/saswatsahu_3116/"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a target="_blank" href="https://x.com/3116Raphel"
+          ><i class="fa-brands fa-x-twitter"></i
+        ></a>
+        <a target="_blank" href="https://github.com/Raphel6969"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+      </div>
+    </footer>
     <!-- SAMPLE DATA  -->
 
     <!-- <li id="${block.id}">
