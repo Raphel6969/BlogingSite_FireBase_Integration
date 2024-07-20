@@ -3,7 +3,7 @@
 body {
   padding: 0;
   margin: 0;
-  height: 100vh;
+  height: 100%;
   background-color: #ffb200;
 }
 
@@ -13,6 +13,10 @@ body {
   justify-content: center;
   flex-direction: column;
   margin-top: 5%;
+}
+
+.container{
+  min-height: calc(100vh - 166px);
 }
 
 /* TEXTAREA */
@@ -131,6 +135,32 @@ li {
 
 .hidden {
   opacity: 0;
+}
+
+/* FOOTER  */
+
+footer{
+  height: 40px;
+  padding: 20px 0;
+  background-color: black;
+  /* margin: 50px 0 0 0 ; */
+  margin-top: auto;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
+  margin: 0 20px;
+}
+
+footer div {
+  display: flex;
+  justify-content: center;
 }
 
 /* MEDIA QUERY  */
