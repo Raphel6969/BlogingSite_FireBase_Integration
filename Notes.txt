@@ -11,10 +11,13 @@ Features:
 
 Future Features:
 - alert box before deletion (DONE)
-- Update of time as we edited the thing 
-- Add a tag of edited after we have edited it 
+- Update of time as we edited the thing (controversial feature: as we may only fix some spell error and even then I change the entire time thing)
+- Add a tag of edited after we have edited it (DONE)
 - Color changing modes
 
 Potential Bugs and Issues
-- readData() on line 70: I want to no be running 24/7 but instead I want to run it less and still show the entire data
-- i want to remove the ogTime variable to make the database less cluttured and instead use the Time property to do it 
+- readData() on line 70: too exposed and open and runs on every js reload 
+- i want to remove the ogTime variable to make the database less cluttured and instead use the Time property to do it (FIXED IN ATMP 11)
+- Edited sign gets removed on reload (FIXED in ATMP 10)
+- The footer is not at all optimized for a growing screen
+
